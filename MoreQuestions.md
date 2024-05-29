@@ -80,6 +80,10 @@ Every hand is exactly one type, from strongest to weakest, they are:
 
 >High card, where all cards' labels are distinct: 23456
 
+If two hands have the same type, a second ordering rule takes effect. Start by comparing the first card in each hand. If these cards are different, the hand with the stronger first card is considered stronger. If the first card in each hand have the same label, however, then move on to considering the second card in each hand. If they differ, the hand with the higher second card wins; otherwise, continue with the third card in each hand, then the fourth, then the fifth.
+
+So, 33332 and 2AAAA are both four of a kind hands, but 33332 is stronger because its first card is stronger. Similarly, 77888 and 77788 are both a full house, but 77888 is stronger because its third card is stronger (and both hands have the same first and second card).
+
 Write a ranking algorithm that ranks the hands of pokers by the above rule of strengths. For example, the input: 
 
 ```
