@@ -23,3 +23,77 @@ a) Write a function called sparse_add that takes two sparse vectors stored as di
 b) Write another function called sparse_dot that calculates the dot product of two sparse vectors.
 
 c) Your boss has asked you to write a function called sparse_len that will return the length of a sparse vector (just as Python’s len returns the length of a list). What do you need to ask her before you can start writing it?
+
+## Complexity
+
+Analys the below code snippet's complexity in N, we assume N here is a power of 2:
+
+```
+count = 0;
+i = N;
+while i > 0: 
+  for j in range(0, i) 
+      count++;
+      i = i//2;
+```
+
+## Generally Tricky challenges
+
+A) Given a string like below:
+
+```
+"
+467..114..
+...*......
+..35..633.
+......#...
+617*......
+.....+.58.
+..592.....
+......755.
+...$.*....
+.664.598..
+"
+```
+
+We consider this string has two numbers that is now a "part number", 114 (top right) and 58 (middle right). It require a number to be **adjacent to a symbol** , even diagonally to be qualified as a part number.
+
+Write a program that calculates the sum of the part numbers in such a string. You can assume that each line of the string contains the same amount of characters. 
+
+## Poker Night
+
+The word of snakes is a bit different to us, in the snake world, they play the game of cards like this, A hand of snake poker consists of five cards labled from "A, K, Q, J, T, 9, 8, 7, 6, 5, 4, 3, 2", where A is the strongest card, and 2 is the lowest.
+
+Every hand is exactly one type, from strongest to weakest, they are:
+
+>Five of a kind, where all five cards have the same label: AAAAA
+
+>Four of a kind, where four cards have the same label and one card has a different label: AA8AA
+
+>Full house, where three cards have the same label, and the remaining two cards share a different label: 23332
+
+>Three of a kind, where three cards have the same label, and the remaining two cards are each different from any other card in the hand: TTT98
+
+>Two pair, where two cards share one label, two other cards share a second label, and the remaining card has a third label: 23432
+
+>One pair, where two cards share one label, and the other three cards have a different label from the pair and each other: A23A4
+
+>High card, where all cards' labels are distinct: 23456
+
+Write a ranking algorithm that ranks the hands of pokers by the above rule of strengths. For example, the input: 
+
+```
+"
+32T3K
+T55J5
+KK677
+KTJJT
+QQQJA
+"
+```
+is ranked into:
+>32T3K is the only one pair and the other hands are all a stronger type, so it gets rank 1.
+
+>KK677 and KTJJT are both two pair. Their first cards both have the same label, but the second card of KK677 is stronger (K vs T), so KTJJT gets rank 2 and KK677 gets rank 3.
+
+>T55J5 and QQQJA are both three of a kind. QQQJA has a stronger first card, so it gets rank 5 and T55J5 gets rank 4.
