@@ -26,7 +26,7 @@ c) Your boss has asked you to write a function called sparse_len that will retur
 
 ## Complexity
 
-Analys the below code snippet's complexity in N, we assume N here is a power of 2:
+A) Analys the below code snippet's complexity in N, we assume N here is a power of 2:
 
 ```
 count = 0;
@@ -36,10 +36,49 @@ while i > 0:
       count++;
       i = i//2;
 ```
+B) Analys the below code snippet's complexity in N, note that they are all recursive functions!
+
+**Take Away**: the <font color="red">first step</font> of analysing recursive functions' complexity is calculating the how many times will the function be called. The <font color="red">second</font> step is analysing the cost of calling once of the function. In the end, times them together.
+
+B.1)
+```
+def recursiveFun1(n):
+  if n <= 0:
+    return 1
+  else:
+    return 1 + recursiveFun1(n-1)
+```
+B.2)
+```
+def recursiveFun2(n):
+  if n <= 0:
+    return 1
+  else:
+    return 1 + recursiveFun2(n-5)
+```
+B.3)
+```
+def recursiveFun3(n):
+  if n <= 0:
+    return 1
+  else:
+    return 1 + recursiveFun3(n//2)
+```
+B.4)
+```
+def recursiveFun4(n):
+  for i in range(n):
+    <O(1) operations>
+  if n <= 0:
+    return 1
+  else:
+    return 1 + recursiveFun4(n-1)
+```
 
 ## Generally Tricky challenges
 
-A) Given a string like below:
+### Check Neighbours Again
+ Given a string like below:
 
 ```
 "
@@ -60,7 +99,7 @@ We consider this string has two numbers that is now a "part number", 114 (top ri
 
 Write a program that calculates the sum of the part numbers in such a string. You can assume that each line of the string contains the same amount of characters. 
 
-## Poker Night
+### Poker Night
 
 The word of snakes is a bit different to us, in the snake world, they play the game of cards like this, A hand of snake poker consists of five cards labled from "A, K, Q, J, T, 9, 8, 7, 6, 5, 4, 3, 2", where A is the strongest card, and 2 is the lowest.
 
