@@ -34,7 +34,7 @@ i = N;
 while i > 0: 
   for j in range(0, i) 
       count++;
-      i = i//2;
+  i = i//2;
 ```
 B) Analys the below code snippet's complexity in N, note that they are all recursive functions!
 
